@@ -5,10 +5,14 @@
  */
 package controlador;
 
+import modelo.Jardinero;
+
 /**
  *
  * @author 2dam
  */
 public interface Dao {
+    
+    Jardinero login(String gmail, String contrasena);
     
 }

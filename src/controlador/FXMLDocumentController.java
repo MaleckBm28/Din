@@ -1,36 +1,56 @@
 package controlador;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import modelo.Jardinero;
 
-/**
- *
- * @author 2dam
- */
-public class FXMLDocumentController implements Initializable {
-    
+public class FXMLDocumentController {
+
     @FXML
-    private Label label;
-    
+    private TextField txtUsuario;
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private PasswordField txtPassword;
+
+    @FXML
+    private AnchorPane rootPane; // contenedor principal
+
+    private DaoImplementacionBd dao = new DaoImplementacionBd();
+
+    @FXML
+    private void loginBd() {
+        String email = txtUsuario.getText();
+        String password = txtPassword.getText();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            mostrarAlerta("Debe completar todos los campos.");
+            return;
+        }
+
+        Jardinero jardinero = dao.login(email, password);
+
+        if (jardinero != null) {
+            try {
+                // Cargar otraVentana.fxml y reemplazar el contenido del rootPane
+                AnchorPane nuevaVista = FXMLLoader.load(getClass().getResource("/vista/MostrarDatos.fxml"));
+                rootPane.getChildren().setAll(nuevaVista);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            mostrarAlerta("Correo o contraseña incorrectos.");
+        }
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+
+    private void mostrarAlerta(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
 }
