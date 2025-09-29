@@ -9,14 +9,27 @@ package modelo;
  *
  * @author 2dam
  */
-public class jardinero {    
+public class Jardinero {    
     private String Nombre;
     private String Apellido;
     private String Contrasena;
-    private String Gmail;
+    private String Email;
     private Float sueldo;
 
-    public jardinero() {
+    public Jardinero() {
+    }
+
+    public Jardinero(String Nombre, String Apellido, String Email, Float sueldo) {
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Email = Email;
+        this.sueldo = sueldo;
+    }
+    
+    
+
+    public Jardinero(String string, String string0, String contrasena, String string1, float aFloat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNombre() {
@@ -31,8 +44,8 @@ public class jardinero {
         return Contrasena;
     }
 
-    public String getGmail() {
-        return Gmail;
+    public String getEmail() {
+        return Email;
     }
 
     public Float getSueldo() {
@@ -51,8 +64,8 @@ public class jardinero {
         this.Contrasena = Contrasena;
     }
 
-    public void setGmail(String Gmail) {
-        this.Gmail = Gmail;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     public void setSueldo(Float sueldo) {
@@ -61,7 +74,7 @@ public class jardinero {
 
     @Override
     public String toString() {
-        return "jardinero{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Contrasena=" + Contrasena + ", Gmail=" + Gmail + ", sueldo=" + sueldo + '}';
+        return "jardinero{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Contrasena=" + Contrasena + ", Email=" + Email + ", sueldo=" + sueldo + '}';
     }
     
     

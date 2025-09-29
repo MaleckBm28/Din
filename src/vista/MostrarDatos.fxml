@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.MostrarDatosController">
+    
+    <children>
+        <Label layoutX="50.0" layoutY="50.0" text="Nombre:" />
+        <Label fx:id="lblNombre" layoutX="150.0" layoutY="50.0" text="" />
+        
+        <Label layoutX="50.0" layoutY="100.0" text="Apellido:" />
+        <Label fx:id="lblApellido" layoutX="150.0" layoutY="100.0" text="" />
+        
+        <Label layoutX="50.0" layoutY="150.0" text="Email:" />
+        <Label fx:id="lblEmail" layoutX="150.0" layoutY="150.0" text="" />
+        
+        <Label layoutX="50.0" layoutY="200.0" text="Sueldo:" />
+        <Label fx:id="lblSueldo" layoutX="150.0" layoutY="200.0" text="" />
+        
+        <Button fx:id="btnCerrar" layoutX="250.0" layoutY="300.0" text="Cerrar" />
+    </children>
+</AnchorPane>
