@@ -1,0 +1,34 @@
+# =====================
+# Archivos/Carpetas de NetBeans
+# =====================
+
+# Build outputs
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+/nbproject/private/
+/build.xml~
+/manifest.mf~
+
+# Archivos de configuración locales
+*.properties~
+*.orig
+
+# Archivos de NetBeans que no son necesarios
+/nbproject/private/
+/nbproject/configs/
+/nbproject/genfiles.properties
+/nbproject/private/private.properties
+/nbproject/private/private.xml
+
+# Archivos de log y temporales
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Archivos de sistema (Windows / macOS / Linux)
+Thumbs.db
+.DS_Store
+*.class
